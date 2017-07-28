@@ -20,15 +20,15 @@ function exit_with_error {
 }
 
 # get username and password
-echo "----  Auto login to MegaNet installation  ----\n"
+echo -e "----  Auto login to MegaNet installation  ----\n"
 echo -n "Enter username(email): "
 read email
 echo -n "Enter password: "
 read password
-echo "\nYou can later change password and username by re-run this installation script\n"
+echo -e "\nYou can later change password and username by re-run this installation script\n"
 
 # put username and password to main script
-if ! cat auto-login-meganet.sh | sed "s/__EMAIL__/${email}" | sed "s/__PASSWORD__/${password}" > tmp.sh; then
+if ! cat auto-login-meganet.sh | sed "s/__EMAIL__/${email}/" | sed "s/__PASSWORD__/${password}/" > tmp.sh; then
     exit_with_error "ERROR: can not create customized login script from the original auto-login-meganet.sh"
 fi
 
