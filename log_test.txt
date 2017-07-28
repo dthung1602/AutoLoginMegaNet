@@ -1,0 +1,16 @@
+[ Sun Jul  2 16:49:10 2017 ]    Network: WiredNetwork
+    Network is not MegaNet or already login
+[ Sun Jul  2 16:50:04 2017 ]    Network: Huy Nguyen
+    Network is not MegaNet or already login
+[ Sun Jul  2 17:01:16 2017 ]    Network: Huy Nguyen
+    Network is not MegaNet or already login
+[ Sun Jul  2 17:12:04 2017 ]    Network: Huy Nguyen
+    Network is not MegaNet or already login
+[ Sun Jul  2 17:19:43 2017 ]    Network: Huy Nguyen
+    Response time out
+[ Sun Jul  2 17:20:18 2017 ]    Network: Huy Nguyen
+    Response time out
+[ Sun Jul  2 17:27:29 2017 ]    Network: Huy Nguyen
+    Response time out
+[ Sun Jul  2 17:33:52 2017 ]    Network: Huy Nguyen
+    ERROR: Connection timeout when sending login request

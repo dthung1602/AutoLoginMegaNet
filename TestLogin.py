@@ -51,7 +51,7 @@ def ready_login():
 
     # establish connection
     try:
-        connection = HTTPConnection("10.10.0.1:3992", timeout=5)
+        connection = HTTPConnection("127.0.0.1:1998", timeout=5)
     except timeout:
         log.append("    ERROR Connection time out")
         finish(1)
@@ -61,7 +61,7 @@ def check_mega_net():
     """determine whether this is MegaNet network or not"""
     # header of getting login page request
     headers = {
-        "Host": "10.10.0.1:3992",
+        "Host": "192.168.1.5:1998",
         "Accept": "*/*",
         "Accept-Language": "en-US,en;q=0.5",
         "Accept-Encoding": "gzip, deflate",
@@ -81,7 +81,7 @@ def check_mega_net():
         log.append("    ERROR A problem occurred when sending test request")
         finish(1)
     except timeout:
-        log.append("    Connection timeout. Network is not MegaNet or already login")
+        log.append("    Network is not MegaNet or already login")
         finish(1)
 
 
@@ -90,7 +90,7 @@ def login():
     # header & body of request
     body = "username=" + username + "&password=" + password
     headers = {
-        "Host": "10.10.0.1:3992",
+        "Host": "127.0.0.1:1998",
         "Referer": "http://10.10.0.1:3992/wifi/pre_login/",
         "Content-Type": "application/x-www-form-urlencoded",
         "Connection": "keep-alive",
@@ -110,6 +110,7 @@ def login():
     # get response
     try:
         response = connection.getresponse()
+        print response.read()
     except timeout:
         log.append("    Response time out")
         finish(1)
@@ -118,6 +119,7 @@ def login():
             s = "    Successfully log in!"
         else:
             s = "    " + str(response.status) + " " + response.reason
+        print response
         log.append(s)
         finish(0)
 
