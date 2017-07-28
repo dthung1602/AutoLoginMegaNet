@@ -15,7 +15,7 @@ fi
 script="/etc/NetworkManager/dispatcher.d/00auto-login-meganet.sh"
 
 # remove main script
-if ! rm auto-login-meganet.sh ${script}; then
+if ! rm ${script}; then
     echo "ERROR: can not remove ${script}"
     echo "Uninstall failed."
     exit 1

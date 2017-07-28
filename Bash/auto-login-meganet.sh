@@ -11,8 +11,8 @@
 # $1 = The interface name ( eth0, wlan0, etc)
 # $2 = Interface status ( "up", "down", etc )
 
-email='__EMAIL__'
-password='__PASSWORD__'
+email='duongthanhhung1998@yahoo.com'
+password='thanhhung1998'
 
 # function to send login request
 function login {
