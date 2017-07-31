@@ -75,7 +75,7 @@ def check_mega_net():
         connection.request("GET", "/wifi/pre_login?referral=http://detectportal.firefox.com/success.txt",
                            headers=headers)
         response = connection.getresponse()
-        if response.reason != "OK":
+        if response.status != "200":
             raise HTTPException
     except HTTPException:
         log.append("    ERROR A problem occurred when sending test request")

@@ -13,7 +13,6 @@ from time import ctime, time
 from sys import argv
 from os import popen
 
-# TODO other circumstances
 # check network status
 if argv[2] == "down":
     exit(0)

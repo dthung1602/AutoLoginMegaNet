@@ -25,7 +25,6 @@ echo -n "Enter username(email): "
 read email
 echo -n "Enter password: "
 read password
-echo -e "\nYou can later change password and username by re-run this installation script\n"
 
 # put username and password to main script
 if ! cat auto-login-meganet.sh | sed "s/__EMAIL__/${email}/" | sed "s/__PASSWORD__/${password}/" > tmp.sh; then
@@ -46,4 +45,6 @@ fi
 
 # remove tmp script
 rm tmp.sh
-echo "Done!"
+echo -e "\nInstallation finished successfully!"
+echo "This folder is not required for the main script to run."
+echo "Re-run this installation script to change the username and/or password,"
