@@ -36,7 +36,7 @@ fi
 
 
 # For wireless network
-if [[ "$1" == wlp3s0 ]]; then
+if [[ "$1" =~ ^w ]]; then
     # Get the network name from iwconfig
     wifi_name=$(/sbin/iwconfig $1 | grep ESSID | cut -d'"' -f2)
 
@@ -47,7 +47,7 @@ if [[ "$1" == wlp3s0 ]]; then
 
 
 # For wired network
-elif [[ "$1" == enp2s0 ]]; then
+elif [[ "$1" =~ ^e ]]; then
     # Try to send whether network is MegaNet or not
     login
 fi

@@ -47,4 +47,4 @@ fi
 rm tmp.sh
 echo -e "\nInstallation finished successfully!"
 echo "This folder is not required for the main script to run."
-echo "Re-run this installation script to change the username and/or password,"
+echo "Re-run this installation script to change the username and/or password."

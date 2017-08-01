@@ -26,7 +26,7 @@ headers = {
     "Referer": "http://10.10.0.1:3992/wifi/pre_login/",
     "Content-Type": "application/x-www-form-urlencoded",
     "Connection": "keep-alive",
-    "Upgrade-Insecure-Requests": "1"
+    "Upgrade-Insecure-Requests": "1",
 }
 
 # send request
