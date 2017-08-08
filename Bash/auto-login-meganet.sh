@@ -16,7 +16,7 @@ password='thanhhung1998'
 
 # function to send login request
 function login {
-    curl http://10.10.0.1:3992/wifi/login \
+    if curl http://10.10.0.1:3992/wifi/login \
              --connect-timeout 5 \
              --max-time 15 \
              -H "Host: 10.10.0.1:3992" \
@@ -25,7 +25,12 @@ function login {
              -H "Connection: keep-alive" \
              -H "Upgrade-Insecure-Requests: 1"\
              --data-urlencode "username=${email}" \
-             --data-urlencode "password=${password}"
+             --data-urlencode "password=${password}"; 
+    then
+        notify-send -t 3000 "Auto Login Meganet" "You have been successfully login Meganet as ${email}"
+    else
+        notify-send -t 3000 "Auto Login Meganet" "Auto login as ${email} failed"
+    fi
 }
 
 
