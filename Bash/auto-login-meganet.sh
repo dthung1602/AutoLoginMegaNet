@@ -2,7 +2,7 @@
 
 #-----------------------------------------------
 # Automatically login to MegaNet networks
-# Last update: July 28, 2017
+# Last update: September 17, 2017
 # Version: 2.0
 # Reference: http://www.fadvisor.net/blog/2012/06/autologin-to-open-wifi/
 #-----------------------------------------------
