@@ -14,13 +14,14 @@ path = dirname(abspath(__file__)) + "/"
 fin = open(path + "account.txt", "r")
 username = percent_encode(fin.readline().strip())
 password = percent_encode(fin.readline().strip())
+redirect = percent_encode("https://meganet.com.vn")
 fin.close()
 
 # establish connection
 connection = HTTPConnection("10.10.0.1:3992", timeout=10)
 
 # header & body of request
-body = "username=" + username + "&password=" + password
+body = "username=" + username + "&password=" + password + "&redirect=" + redirect
 headers = {
     "Host": "10.10.0.1:3992",
     "Referer": "http://10.10.0.1:3992/wifi/pre_login/",
