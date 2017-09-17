@@ -11,8 +11,9 @@
 # $1 = The interface name ( eth0, wlan0, etc)
 # $2 = Interface status ( "up", "down", etc )
 
-email='duongthanhhung1998@yahoo.com'
-password='thanhhung1998'
+email='__EMAIL__'
+password='__PASSWORD__'
+redirect='https://meganet.com.vn'
 
 # function to send login request
 function login {
@@ -25,7 +26,8 @@ function login {
              -H "Connection: keep-alive" \
              -H "Upgrade-Insecure-Requests: 1"\
              --data-urlencode "username=${email}" \
-             --data-urlencode "password=${password}"; 
+             --data-urlencode "password=${password}" \
+             --data-urlencode "redirect=${redirect}";
     then
         notify-send -t 3000 "Auto Login Meganet" "You have been successfully login Meganet as ${email}"
     else
