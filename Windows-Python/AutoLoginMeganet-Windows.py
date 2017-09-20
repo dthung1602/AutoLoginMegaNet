@@ -11,7 +11,8 @@
 
 from httplib import HTTPConnection
 from os.path import dirname, abspath
-from urllib import quote as percent_encode
+from urllib import quote_plus as percent_encode
+
 
 path = dirname(abspath(__file__)) + "/"
 
@@ -19,14 +20,13 @@ path = dirname(abspath(__file__)) + "/"
 fin = open(path + "account.txt", "r")
 username = percent_encode(fin.readline().strip())
 password = percent_encode(fin.readline().strip())
-redirect = percent_encode("https://meganet.com.vn")
 fin.close()
 
 # establish connection
 connection = HTTPConnection("10.10.0.1:3992", timeout=10)
 
 # header & body of request
-body = "username=" + username + "&password=" + password + "&redirect=" + redirect
+body = "username=" + username + "&password=" + password + "&redirect="
 headers = {
     "Host": "10.10.0.1:3992",
     "Referer": "http://10.10.0.1:3992/wifi/pre_login/",
@@ -37,4 +37,7 @@ headers = {
 
 # send request
 connection.request("POST", "/wifi/login", body, headers)
+response = connection.getresponse()
+print response.status
+print response.read()
 connection.close()
