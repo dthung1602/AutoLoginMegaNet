@@ -17,11 +17,11 @@ redirect='https://meganet.com.vn'
 
 # function to send login request
 function login {
-    if curl http://10.10.0.1:3992/wifi/login \
+    if curl http://10.20.0.1:3992/wifi/login \
              --connect-timeout 5 \
              --max-time 15 \
-             -H "Host: 10.10.0.1:3992" \
-             -H "Referer: http://10.10.0.1:3992/wifi/pre_login/"\
+             -H "Host: 10.20.0.1:3992" \
+             -H "Referer: http://10.20.0.1:3992/wifi/pre_login/"\
              -H "Content-Type: application/x-www-form-urlencoded" \
              -H "Connection: keep-alive" \
              -H "Upgrade-Insecure-Requests: 1"\

@@ -23,13 +23,13 @@ password = percent_encode(fin.readline().strip())
 fin.close()
 
 # establish connection
-connection = HTTPConnection("10.10.0.1:3992", timeout=10)
+connection = HTTPConnection("10.20.0.1:3992", timeout=10)
 
 # header & body of request
 body = "username=" + username + "&password=" + password + "&redirect="
 headers = {
-    "Host": "10.10.0.1:3992",
-    "Referer": "http://10.10.0.1:3992/wifi/pre_login/",
+    "Host": "10.20.0.1:3992",
+    "Referer": "http://10.20.0.1:3992/wifi/pre_login/",
     "Content-Type": "application/x-www-form-urlencoded",
     "Connection": "keep-alive",
     "Upgrade-Insecure-Requests": "1",
